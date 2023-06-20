@@ -1,8 +1,10 @@
 const { MongoClient } = require("mongodb");
+
 const express = require("express");
 const {
   findDatabaseAbout,
   findDatabaseProjects,
+  insertMessage,
   sendMessage,
 } = require("./app.controller");
 
@@ -43,11 +45,13 @@ app.get("/projects", async (req, res) => {
 
 app.post("/contact", async (req, res) => {
   try {
-    const { message, email } = req.body;
+    const { message, email, name } = req.body;
 
     await client.connect();
-    const result = await sendMessage(client, message, email);
+    const result = await insertMessage(client, message, email, name);
     res.status(201).send({ result });
+
+    sendMessage(message, email, name);
   } catch (e) {
     console.log(e);
   } finally {
