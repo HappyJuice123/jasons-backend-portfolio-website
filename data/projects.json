@@ -1,0 +1,35 @@
+{
+  "projects": [
+    {
+      "name": "Board Game Review Front End",
+      "github": "https://github.com/HappyJuice123/fe-nc-games-project",
+      "host": "https://jasons-board-game-reviews.netlify.app/",
+      "techStack": ["JavaScript", "React", "Axios", "CSS"],
+      "description": "Designed and developed a front end for the board game review API which used CSS for styling and React to render components on pages. The project is hosted using Netlify and displays information derived from the back end project to allow users to navigate between pages, filter and sort reviews, vote, post comments and more.",
+      "img": "1W43LknODiZ6C1SHBUJmsLOEp6ZtP3sSY"
+    },
+
+    {
+      "name": "Board Game Review API",
+      "github": "https://github.com/HappyJuice123/backend-portfolio-project-NC",
+      "host": "https://jasons-backend-games-project.onrender.com",
+      "techStack": ["JavaScript", "Express", "Jest", "SuperTest", "PostgreSQL"],
+      "description": "The project involved building a relational database API for board game reviews, which utilised Express and PostgreSQL. The project was hosted using Render, which stored data such as user reviews, comments from users, avatar images and other information.",
+      "img": "1-YiHfnwOCg53_lqV79_0uUiulIy2M6G5"
+    },
+    {
+      "name": "Capsalert - Medication Alert App",
+      "github": "https://github.com/HappyJuice123/capsalert",
+      "techStack": [
+        "JavaScript",
+        "React-Native",
+        "Expo",
+        "Firebase",
+        "Tailwind",
+        "NativeWind"
+      ],
+      "description": "Developed and produced a medication alert app in a group of five, over the course of two weeks. The app helps users manage their medications through storage of medicines in a database, use of notification alerts for medicine administration, and retrieval of the medicine’s description from the NHS Medicines API.",
+      "img": "12NeDT1ilmES_UZeaEGauRitiJiQK4wlT"
+    }
+  ]
+}

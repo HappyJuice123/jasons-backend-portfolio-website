@@ -1,6 +1,7 @@
 const { MongoClient } = require("mongodb");
 
-const data = require("../backend-portfolio/data/personal-information.json");
+const about = require("./data/about.json");
+const projects = require("./data/projects.json");
 
 async function main() {
   const uri =
@@ -10,9 +11,10 @@ async function main() {
 
   try {
     await client.connect();
-    await deleteDatabase(client);
-    await createDatabase(client);
-    await findDatabase(client);
+    await deleteDatabaseAbout(client);
+    await deleteDatabaseProjects(client);
+    await createDatabaseAbout(client);
+    await createDatabaseProjects(client);
   } catch (e) {
     console.log(e);
   } finally {
@@ -20,32 +22,34 @@ async function main() {
   }
 }
 
-async function createDatabase(client) {
+async function createDatabaseAbout(client) {
   const result = await client
     .db("portfolio")
-    .collection("personal-information")
-    .insertOne(data);
+    .collection("about")
+    .insertOne(about);
 
   console.log("New data added with the following id ", result.insertedId);
 }
 
-async function findDatabase(client) {
+async function createDatabaseProjects(client) {
   const result = await client
     .db("portfolio")
-    .collection("personal-information")
-    .find();
+    .collection("projects")
+    .insertOne(projects);
 
-  if (result) {
-    return result.forEach((answer) => console.log(answer));
-  } else {
-    console.log("Didn't find result");
-  }
+  console.log("New data added with the following id ", result.insertedId);
 }
 
-async function deleteDatabase(client) {
+async function deleteDatabaseAbout(client) {
+  const result = await client.db("portfolio").collection("about").deleteOne();
+
+  console.log(`${result.deletedCount} document(s) was deleted`);
+}
+
+async function deleteDatabaseProjects(client) {
   const result = await client
     .db("portfolio")
-    .collection("personal-information")
+    .collection("projects")
     .deleteOne();
 
   console.log(`${result.deletedCount} document(s) was deleted`);
