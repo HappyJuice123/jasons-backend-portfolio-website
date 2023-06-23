@@ -1,9 +1,47 @@
 {
   "name": "Jason Chan",
-  "home": "Hello and a warm welcome to my portfolio website! My name is Jason, and I'm excited to have you here. As you navigate through these digital pages, you'll discover a diverse range of projects that reflect my passion, skills, and dedication.\nEvery project tells a unique story of overcoming challenges, bringing ideas to life, and solutions crafted with care. With every line of code, every pixel meticulously placed, I strive to create experiences that leave a lasting impression.\nWhether you're an industry professional, a fellow enthusiast, or simply curious about what I can bring to the table, I invite you to delve into my collection of completed projects. Each one is a testament to my expertise, creativity, and attention to detail.\nI believe in the power of collaboration, so if you have any questions, ideas, or potential collaborations, feel free to reach out. Together, we can bring new visions to life.\nThank you for joining me on this journey. I hope you find inspiration, joy, and a glimpse into the possibilities that await. Welcome to my portfolio, where imagination meets reality!",
+  "home": "Hello and a warm welcome to my portfolio website!\n\nMy name is Jason, and I'm excited to have you here. As you navigate through these digital pages, you'll discover a diverse range of projects that reflect my passion, skills, and dedication.\n\nEvery project tells a unique story of overcoming challenges, bringing ideas to life, and solutions crafted with care. With every line of code, every pixel meticulously placed, I strive to create experiences that leave a lasting impression.\n\nWhether you're an industry professional, a fellow enthusiast, or simply curious about what I can bring to the table, I invite you to delve into my collection of completed projects. Each one is a testament to my expertise, creativity, and attention to detail.\n\nI believe in the power of collaboration, so if you have any questions, ideas, or potential collaborations, feel free to reach out. Together, we can bring new visions to life.\n\nThank you for joining me on this journey. I hope you find inspiration, joy, and a glimpse into the possibilities that await. Welcome to my portfolio, where imagination meets reality!",
   "description": "I am a good boy",
   "linkedin": "https://www.linkedin.com/in/jason-chan-a35255159/",
   "github": "https://github.com/HappyJuice123",
   "email": "jasonchan1201@gmail.com",
-  "phone": "07784364620"
+  "phone": "07784364620",
+  "timeline": [
+    {
+      "id": 1,
+      "title": "Northcoders - Junior Full Stack Developer",
+      "location": "Manchester, UK",
+      "description": "13-Week Software Development Bootcamp Course covering the essentials of Back End and Front End through the use of JavaScript, HTML, CSS, and SQL.",
+      "buttonText": "Company Website",
+      "date": "January 2023 - April 2023",
+      "icon": "work"
+    },
+    {
+      "id": 2,
+      "title": "Arcadis - Assistant Civil Engineer",
+      "location": "Warrington, UK",
+      "description": "Developed, designed and delivered key bridges for HS2, which are currently under construction.",
+      "buttonText": "Company Website",
+      "date": "October 2018 - December 2022",
+      "icon": "work"
+    },
+    {
+      "id": 3,
+      "title": "University of Manchester",
+      "location": "Manchester, UK",
+      "description": "MEng Civil & Structural Engineering - 2:1",
+      "buttonText": "Course Certification",
+      "date": "September 2014 - July 2018",
+      "icon": "school"
+    },
+    {
+      "id": 4,
+      "title": "Friars School",
+      "location": "Bangor, UK",
+      "description": "A-Levels: Mathematics (A*), Further Mathematics (A*), Physics(A*), Chemistry(A*)",
+      "buttonText": "Course Certification",
+      "date": "September 2012 - August 2014",
+      "icon": "school"
+    }
+  ]
 }
