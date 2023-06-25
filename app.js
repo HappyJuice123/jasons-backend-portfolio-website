@@ -7,6 +7,7 @@ const {
   findDatabaseProjects,
   insertMessage,
   sendMessage,
+  findDatabaseByProjectId,
 } = require("./app.controller");
 
 const app = express();
@@ -36,8 +37,23 @@ app.get("/projects", async (req, res) => {
   try {
     await client.connect();
     const projects = await findDatabaseProjects(client);
-    console.log(projects);
+
     res.status(200).send({ projects });
+  } catch (e) {
+    console.log(e);
+  } finally {
+    await client.close();
+  }
+});
+
+app.get("/projects/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+
+    await client.connect();
+    const project = await findDatabaseByProjectId(client, id);
+
+    res.status(200).send({ project });
   } catch (e) {
     console.log(e);
   } finally {

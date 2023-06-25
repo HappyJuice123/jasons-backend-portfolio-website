@@ -23,6 +23,16 @@ async function findDatabaseProjects(client) {
   }
 }
 
+async function findDatabaseByProjectId(client, id) {
+  const result = await client.db("portfolio").collection("projects").findOne();
+
+  if (result) {
+    return result.projects.find((project) => project.id === +id);
+  } else {
+    console.log("Didn't find result");
+  }
+}
+
 async function insertMessage(client, message, email, name) {
   const emailObj = { email };
   const messageObj = { message };
@@ -140,4 +150,5 @@ module.exports = {
   findDatabaseProjects,
   insertMessage,
   sendMessage,
+  findDatabaseByProjectId,
 };
