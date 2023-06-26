@@ -8,6 +8,7 @@ const {
   insertMessage,
   sendMessage,
   findDatabaseByProjectId,
+  findDatabaseTechStack,
 } = require("./app.controller");
 
 const app = express();
@@ -54,6 +55,19 @@ app.get("/projects/:id", async (req, res) => {
     const project = await findDatabaseByProjectId(client, id);
 
     res.status(200).send({ project });
+  } catch (e) {
+    console.log(e);
+  } finally {
+    await client.close();
+  }
+});
+
+app.get("/techStack", async (req, res) => {
+  try {
+    await client.connect();
+    const techStack = await findDatabaseTechStack(client);
+
+    res.status(200).send({ techStack });
   } catch (e) {
     console.log(e);
   } finally {

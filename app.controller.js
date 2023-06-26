@@ -33,6 +33,17 @@ async function findDatabaseByProjectId(client, id) {
   }
 }
 
+async function findDatabaseTechStack(client) {
+  const result = await client.db("portfolio").collection("techStack").findOne();
+
+  if (result) {
+    console.log(result);
+    return result;
+  } else {
+    console.log("Didn't find result");
+  }
+}
+
 async function insertMessage(client, message, email, name) {
   const emailObj = { email };
   const messageObj = { message };
@@ -151,4 +162,5 @@ module.exports = {
   insertMessage,
   sendMessage,
   findDatabaseByProjectId,
+  findDatabaseTechStack,
 };
