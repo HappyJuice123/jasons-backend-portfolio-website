@@ -27,6 +27,7 @@ async function findDatabaseByProjectId(client, id) {
   const result = await client.db("portfolio").collection("projects").findOne();
 
   if (result) {
+    console.log(result.projects.find((project) => project.id === +id));
     return result.projects.find((project) => project.id === +id);
   } else {
     console.log("Didn't find result");
