@@ -119,14 +119,7 @@ async function sendMessage(message, email, name) {
     to: email,
     subject:
       "*AUTOMATED* Jason Chan's Portfolio Website - Your message has been received!",
-    text: `
-    Hi ${name},\n
-    Thank you for sending me a message!\n
-    Your details below has been sent to me and I will return your message as soon as I can!\n
-    Email: ${email}\n
-    Message: ${message}\n
-    Kind regards,\n
-    Jason`,
+    text: `Hi ${name},\n\nThank you for sending me a message!\n\nYour details below has been sent to me and I will return your message as soon as I can!\n\nEmail: ${email}\nMessage: ${message}\n\nKind regards,\nJason`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {

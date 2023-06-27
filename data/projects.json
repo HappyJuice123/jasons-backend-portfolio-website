@@ -15,7 +15,7 @@
       "name": "Board Game Review API",
       "github": "https://github.com/HappyJuice123/backend-portfolio-project-NC",
       "host": "https://jasons-backend-games-project.onrender.com",
-      "techStack": ["JavaScript", "Express", "Jest", "SuperTest", "PostgreSQL"],
+      "techStack": ["JavaScript", "Express", "Jest", "PostgreSQL"],
       "description": "The project involved building a relational database API for board game reviews, which utilised Express and PostgreSQL. The project was hosted using Render, which stored data such as user reviews, comments from users, avatar images and other information.",
       "img": "1-YiHfnwOCg53_lqV79_0uUiulIy2M6G5"
     },
@@ -25,7 +25,7 @@
       "github": "https://github.com/HappyJuice123/capsalert",
       "techStack": [
         "JavaScript",
-        "React-Native",
+        "React Native",
         "Expo",
         "Firebase",
         "Tailwind",
