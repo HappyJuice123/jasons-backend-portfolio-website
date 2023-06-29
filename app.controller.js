@@ -119,7 +119,7 @@ async function sendMessage(message, email, name) {
     to: email,
     subject:
       "*AUTOMATED* Jason Chan's Portfolio Website - Your message has been received!",
-    text: `Hi ${name},\n\nThank you for sending me a message!\n\nYour details below has been sent to me and I will return your message as soon as I can!\n\nEmail: ${email}\nMessage: ${message}\n\nKind regards,\nJason`,
+    text: `Hi ${name},\n\nThank you for sending me a message!\n\nYour details below has been sent to me and I will return your message as soon as I can!\n\nYour Email: ${email}\n\nYour Message:\n\n"${message}"\n\nKind regards,\nJason`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
@@ -138,7 +138,7 @@ function sendNotificationEmail(name, email, message) {
     from: "jasonchan1201@gmail.com",
     to: "jasonchan1201@gmail.com",
     subject: "Jason Chan Portfolio Website - New Message Notification",
-    text: `You have received a new message from your website:\n\nName: ${name}\nEmail: ${email}\nMessage: ${message}`,
+    text: `You have received a new message from your website:\n\nName: ${name}\nEmail: ${email}\nMessage:\n\n"${message}"`,
   };
 
   transporter.sendMail(mailOptions, (error, info) => {
