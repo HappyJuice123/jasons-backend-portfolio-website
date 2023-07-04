@@ -16,8 +16,6 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-console.log("process >>>", process.env.MONGODB_PASSWORD);
-
 const uri = `mongodb+srv://jasonchan1201:${process.env.MONGODB_PASSWORD}@jasons-backend-portfoli.n3cirox.mongodb.net/`;
 
 const client = new MongoClient(uri);

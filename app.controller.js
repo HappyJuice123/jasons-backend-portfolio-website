@@ -13,7 +13,11 @@ async function findDatabaseAbout(client) {
 }
 
 async function findDatabaseProjects(client) {
-  const result = await client.db("portfolio").collection("projects").findOne();
+  const result = await client
+    .db("portfolio")
+    .collection("projects")
+    .find()
+    .toArray();
 
   if (result) {
     console.log(result);
@@ -24,11 +28,16 @@ async function findDatabaseProjects(client) {
 }
 
 async function findDatabaseByProjectId(client, id) {
-  const result = await client.db("portfolio").collection("projects").findOne();
+  console.log(typeof id);
+
+  const result = await client
+    .db("portfolio")
+    .collection("projects")
+    .findOne({ id: +id });
 
   if (result) {
-    console.log(result.projects.find((project) => project.id === +id));
-    return result.projects.find((project) => project.id === +id);
+    console.log(result);
+    return result;
   } else {
     console.log("Didn't find result");
   }

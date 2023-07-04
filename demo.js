@@ -38,9 +38,9 @@ async function createDatabaseProjects(client) {
   const result = await client
     .db("portfolio")
     .collection("projects")
-    .insertOne(projects);
+    .insertMany(projects);
 
-  console.log("New data added with the following id ", result.insertedId);
+  console.log("New data added with the following id ", result.insertedIds);
 }
 
 async function createDatabaseTechStack(client) {
@@ -62,7 +62,7 @@ async function deleteDatabaseProjects(client) {
   const result = await client
     .db("portfolio")
     .collection("projects")
-    .deleteOne();
+    .deleteMany({});
 
   console.log(`${result.deletedCount} document(s) was deleted`);
 }
