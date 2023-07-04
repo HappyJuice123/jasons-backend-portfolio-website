@@ -101,8 +101,6 @@ async function insertMessage(client, message, email, name) {
   }
 }
 
-console.log(process.env.EMAIL_PASSWORD);
-
 const transporter = nodemailer.createTransport({
   host: "smtp.gmail.com",
   port: 587,

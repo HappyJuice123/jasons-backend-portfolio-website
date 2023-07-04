@@ -1,5 +1,6 @@
 const { MongoClient } = require("mongodb");
 const cors = require("cors");
+require("dotenv").config();
 
 const express = require("express");
 const {
@@ -15,17 +16,15 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const port = 9090;
+console.log("process >>>", process.env.MONGODB_PASSWORD);
 
-const uri =
-  "mongodb+srv://jasonchan1201:jYXCCIQOIDL95fXl@jasons-backend-portfoli.n3cirox.mongodb.net/";
+const uri = `mongodb+srv://jasonchan1201:${process.env.MONGODB_PASSWORD}@jasons-backend-portfoli.n3cirox.mongodb.net/`;
 
 const client = new MongoClient(uri);
 
 async function connectToDatabase() {
   try {
     await client.connect();
-    console.log("Connected to Database");
   } catch (e) {
     console.log(e);
   }
@@ -103,6 +102,4 @@ function cleanup() {
 process.on("SIGINT", cleanup);
 process.on("SIGTERM", cleanup);
 
-app.listen(9090, () => {
-  console.log(`Server is listening on port ${port}`);
-});
+module.exports = app;
