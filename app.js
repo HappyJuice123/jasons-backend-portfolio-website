@@ -55,9 +55,14 @@ app.get("/projects/:id", async (req, res) => {
     const { id } = req.params;
     const project = await findDatabaseByProjectId(client, id);
 
-    res.status(200).send({ project });
+    if (project) {
+      res.status(200).send({ project });
+    } else {
+      throw "This project does not exist.";
+    }
   } catch (e) {
     console.log(e);
+    res.status(400).send({ msg: "Bad Request" });
   }
 });
 

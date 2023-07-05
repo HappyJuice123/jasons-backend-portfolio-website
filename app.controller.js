@@ -28,8 +28,6 @@ async function findDatabaseProjects(client) {
 }
 
 async function findDatabaseByProjectId(client, id) {
-  console.log(typeof id);
-
   const result = await client
     .db("portfolio")
     .collection("projects")
