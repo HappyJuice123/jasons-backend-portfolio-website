@@ -10,7 +10,9 @@ const {
   getProject,
   postMessage,
   getTechStack,
-} = require("./app.model");
+} = require("./model/app.model");
+
+const { handle404 } = require("./controller/error-handling.controller");
 
 const app = express();
 app.use(cors());
@@ -39,6 +41,8 @@ app.get("/projects/:id", getProject);
 app.get("/techStack", getTechStack);
 
 app.post("/contact", postMessage);
+
+app.use(handle404);
 
 async function closeMongoDBConnection() {
   try {

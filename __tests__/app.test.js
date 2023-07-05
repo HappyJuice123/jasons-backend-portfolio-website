@@ -78,6 +78,94 @@ describe("App Test", () => {
       const res = await request(app).get("/projects/5");
 
       expect(res.status).toBe(400);
+      expect(res["_body"].msg).toBe("Bad Request");
+    });
+  });
+  describe("/techStack", () => {
+    test("200 - responds with techStack object", async () => {
+      const res = await request(app).get("/techStack");
+
+      expect(res.status).toBe(200);
+      expect(res["_body"].techStack).toMatchObject({
+        _id: expect.any(String),
+        JavaScript: expect.any(Number),
+        MongoDB: expect.any(Number),
+        Firebase: expect.any(Number),
+        HTML: expect.any(Number),
+        CSS: expect.any(Number),
+        PostgreSQL: expect.any(Number),
+        Expo: expect.any(Number),
+        Jest: expect.any(Number),
+        React: expect.any(Number),
+        "React Native": expect.any(Number),
+        Tailwind: expect.any(Number),
+        Axios: expect.any(Number),
+        Express: expect.any(Number),
+        "Node.js": expect.any(Number),
+        Bootstrap: expect.any(Number),
+        NativeWind: expect.any(Number),
+      });
+    });
+  });
+  describe("/contact", () => {
+    test("201 - responds with the posted message, email and name", async () => {
+      const addMessage = {
+        name: "Jake",
+        email: "testing@example.com",
+        message: "Hello, my friend!",
+      };
+
+      const res = await request(app).post("/contact").send(addMessage);
+
+      expect(res.status).toBe(201);
+      expect(res["_body"].result.emailResult.email).toBe("testing@example.com");
+      expect(res["_body"].result.nameResult.name).toBe("Jake");
+      expect(res["_body"].result.messageResult.message).toBe(
+        "Hello, my friend!"
+      );
+    });
+    test("400 - responds with Bad Request when given a missing message", async () => {
+      const addMessage = {
+        name: "Jake",
+        email: "testing@example.com",
+      };
+
+      const res = await request(app).post("/contact").send(addMessage);
+
+      expect(res.status).toBe(400);
+      expect(res["_body"].msg).toBe("Error - All fields are required.");
+    });
+    test("400 - responds with Bad Request when given a missing email", async () => {
+      const addMessage = {
+        name: "Jake",
+        message: "Hello my friend!",
+      };
+
+      const res = await request(app).post("/contact").send(addMessage);
+
+      expect(res.status).toBe(400);
+      expect(res["_body"].msg).toBe("Error - All fields are required.");
+    });
+    test("400 - responds with Bad Request when given a missing name", async () => {
+      const addMessage = {
+        email: "testing@example.com",
+        message: "Hello my friend!",
+      };
+
+      const res = await request(app).post("/contact").send(addMessage);
+
+      expect(res.status).toBe(400);
+      expect(res["_body"].msg).toBe("Error - All fields are required.");
+    });
+  });
+  describe("/notAPath", () => {
+    test("404 - responds with a Not Found", async () => {
+      const res = await request(app).get("/notAPath");
+
+      console.log(res);
+
+      expect(res.status).toBe(404);
+      expect(res["_body"].msg).toBe("Error 404 - Not Found");
     });
   });
 });

@@ -6,7 +6,7 @@ const {
   sendMessage,
   findDatabaseByProjectId,
   findDatabaseTechStack,
-} = require("./app.controller");
+} = require("../controller/app.controller");
 require("dotenv").config();
 
 const uri = `mongodb+srv://jasonchan1201:${process.env.MONGODB_PASSWORD}@jasons-backend-portfoli.n3cirox.mongodb.net/`;
@@ -53,10 +53,15 @@ async function postMessage(req, res) {
   try {
     const { message, email, name } = req.body;
     const result = await insertMessage(client, message, email, name);
-    res.status(201).send({ result });
 
-    sendMessage(message, email, name);
+    if (message && email && name) {
+      res.status(201).send({ result });
+      sendMessage(message, email, name);
+    } else {
+      throw "Error - All fields are required.";
+    }
   } catch (e) {
+    res.status(400).send({ msg: e });
     console.log(e);
   }
 }

@@ -131,7 +131,9 @@ async function sendMessage(message, email, name) {
     if (error) {
       console.log(error);
     } else {
-      console.log("Email sent:", info.response);
+      if (process.env.NODE_ENV !== "test") {
+        console.log("Email sent:", info.response);
+      }
       sendNotificationEmail(name, email, message);
       res.status(200).send("Email sent successfully");
     }
@@ -150,7 +152,9 @@ function sendNotificationEmail(name, email, message) {
     if (error) {
       console.log("Error sending notification email:", error);
     } else {
-      console.log("Notification email sent:", info.response);
+      if (process.env.NODE_ENV !== "test") {
+        console.log("Notification email sent:", info.response);
+      }
     }
   });
 }
