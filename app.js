@@ -3,14 +3,14 @@ const cors = require("cors");
 require("dotenv").config();
 
 const express = require("express");
+
 const {
-  findDatabaseAbout,
-  findDatabaseProjects,
-  insertMessage,
-  sendMessage,
-  findDatabaseByProjectId,
-  findDatabaseTechStack,
-} = require("./app.controller");
+  getAbout,
+  getProjects,
+  getProject,
+  postMessage,
+  getTechStack,
+} = require("./app.model");
 
 const app = express();
 app.use(cors());
@@ -30,63 +30,15 @@ async function connectToDatabase() {
 
 connectToDatabase();
 
-app.get("/about", async (req, res) => {
-  try {
-    const about = await findDatabaseAbout(client);
-    console.log(about);
-    res.status(200).send({ about });
-  } catch (e) {
-    console.log(e);
-  }
-});
+app.get("/about", getAbout);
 
-app.get("/projects", async (req, res) => {
-  try {
-    const projects = await findDatabaseProjects(client);
+app.get("/projects", getProjects);
 
-    res.status(200).send({ projects });
-  } catch (e) {
-    console.log(e);
-  }
-});
+app.get("/projects/:id", getProject);
 
-app.get("/projects/:id", async (req, res) => {
-  try {
-    const { id } = req.params;
-    const project = await findDatabaseByProjectId(client, id);
+app.get("/techStack", getTechStack);
 
-    if (project) {
-      res.status(200).send({ project });
-    } else {
-      throw "This project does not exist.";
-    }
-  } catch (e) {
-    console.log(e);
-    res.status(400).send({ msg: "Bad Request" });
-  }
-});
-
-app.get("/techStack", async (req, res) => {
-  try {
-    const techStack = await findDatabaseTechStack(client);
-
-    res.status(200).send({ techStack });
-  } catch (e) {
-    console.log(e);
-  }
-});
-
-app.post("/contact", async (req, res) => {
-  try {
-    const { message, email, name } = req.body;
-    const result = await insertMessage(client, message, email, name);
-    res.status(201).send({ result });
-
-    sendMessage(message, email, name);
-  } catch (e) {
-    console.log(e);
-  }
-});
+app.post("/contact", postMessage);
 
 async function closeMongoDBConnection() {
   try {
