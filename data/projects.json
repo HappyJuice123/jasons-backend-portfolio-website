@@ -4,7 +4,7 @@
     "name": "Board Game Review Front End",
     "github": "https://github.com/HappyJuice123/fe-nc-games-project",
     "host": "https://jasons-board-game-reviews.netlify.app/",
-    "techStack": ["JavaScript", "React", "Axios", "CSS"],
+    "techStack": ["JavaScript", "React", "Axios", "CSS", "Node.js"],
     "description": "Designed and developed a front end for the board game review API which used CSS for styling and React to render components on pages. The project is hosted using Netlify and displays information derived from the back end project to allow users to navigate between pages, filter and sort reviews, vote, post comments and more.",
     "img": "1W43LknODiZ6C1SHBUJmsLOEp6ZtP3sSY"
   },
@@ -14,7 +14,14 @@
     "name": "Board Game Review API",
     "github": "https://github.com/HappyJuice123/backend-portfolio-project-NC",
     "host": "https://jasons-backend-games-project.onrender.com",
-    "techStack": ["JavaScript", "Express", "Jest", "PostgreSQL", "SuperTest"],
+    "techStack": [
+      "JavaScript",
+      "Express",
+      "Jest",
+      "PostgreSQL",
+      "SuperTest",
+      "Node.js"
+    ],
     "description": "The project involved building a relational database API for board game reviews, which utilised Express and PostgreSQL. The project was hosted using Render, which stored data such as user reviews, comments from users, avatar images and other information.",
     "img": "1-YiHfnwOCg53_lqV79_0uUiulIy2M6G5"
   },
@@ -32,5 +39,36 @@
     ],
     "description": "Developed and produced a medication alert app in a group of five, over the course of two weeks. The app helps users manage their medications through storage of medicines in a database, use of notification alerts for medicine administration, and retrieval of the medicine’s description from the NHS Medicines API.",
     "img": "12NeDT1ilmES_UZeaEGauRitiJiQK4wlT"
+  },
+  {
+    "id": 4,
+    "name": "Portfolio Website API",
+    "github": "https://github.com/HappyJuice123/jasons-backend-portfolio-website",
+    "techStack": [
+      "JavaScript",
+      "Node.js",
+      "MongoDB",
+      "Nodemailer",
+      "Express",
+      "Jest",
+      "Supertest"
+    ],
+    "description": "API database built using MongoDB, which was self taught. The project was hosted using XXX, which stored data such as my personal description, project information and tech stack used in projects.",
+    "img": "1BWmC9XeEe9t3uQDSeJ3BiOTpf3Ehk85f"
+  },
+  {
+    "id": 5,
+    "name": "Portfolio Website Front End",
+    "github": "https://github.com/HappyJuice123/personal-portfolio",
+    "techStack": [
+      "JavaScript",
+      "Node.js",
+      "React",
+      "Axios",
+      "Bootstrap",
+      "CSS"
+    ],
+    "description": "Designed and developed the front end using my Portfolio Website API project. Used Bootstrap for the first time and found it very useful in keeping styling consistent across pages.",
+    "img": "1X5cNZXSTqZahLdBQ2AVtd_BaHjaeVezc"
   }
 ]

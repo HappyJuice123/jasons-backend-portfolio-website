@@ -10,6 +10,7 @@ const {
   getProject,
   postMessage,
   getTechStack,
+  getEndpoints,
 } = require("./controller/app.controller");
 
 const { handle404 } = require("./controller/error-handling.controller");
@@ -41,6 +42,8 @@ app.get("/projects/:id", getProject);
 app.get("/techStack", getTechStack);
 
 app.post("/contact", postMessage);
+
+app.get("/api", getEndpoints);
 
 app.use(handle404);
 

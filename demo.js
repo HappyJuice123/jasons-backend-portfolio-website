@@ -3,6 +3,7 @@ const { MongoClient } = require("mongodb");
 const about = require("./data/about.json");
 const projects = require("./data/projects.json");
 const techStack = require("./data/techStack.json");
+const endpoints = require("./data/endpoints.json");
 
 async function main() {
   const uri =
@@ -15,9 +16,12 @@ async function main() {
     await deleteDatabaseAbout(client);
     await deleteDatabaseProjects(client);
     await deleteDatabaseTechStack(client);
+    await deleteDatabaseEndpoints(client);
+
     await createDatabaseAbout(client);
     await createDatabaseProjects(client);
     await createDatabaseTechStack(client);
+    await createDatabaseEndpoints(client);
   } catch (e) {
     console.log(e);
   } finally {
@@ -52,6 +56,15 @@ async function createDatabaseTechStack(client) {
   console.log("New data added with the following id ", result.insertedId);
 }
 
+async function createDatabaseEndpoints(client) {
+  const result = await client
+    .db("portfolio")
+    .collection("endpoints")
+    .insertOne(endpoints);
+
+  console.log("New data added with the following id ", result.insertedId);
+}
+
 async function deleteDatabaseAbout(client) {
   const result = await client.db("portfolio").collection("about").deleteOne();
 
@@ -71,6 +84,15 @@ async function deleteDatabaseTechStack(client) {
   const result = await client
     .db("portfolio")
     .collection("techStack")
+    .deleteOne();
+
+  console.log(`${result.deletedCount} document(s) was deleted`);
+}
+
+async function deleteDatabaseEndpoints(client) {
+  const result = await client
+    .db("portfolio")
+    .collection("endpoints")
     .deleteOne();
 
   console.log(`${result.deletedCount} document(s) was deleted`);

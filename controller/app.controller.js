@@ -6,6 +6,7 @@ const {
   sendMessage,
   findDatabaseByProjectId,
   findDatabaseTechStack,
+  findDatabaseEndpoints,
 } = require("../model/app.model");
 require("dotenv").config();
 
@@ -76,10 +77,21 @@ async function getTechStack(req, res) {
   }
 }
 
+async function getEndpoints(req, res) {
+  try {
+    const endpoints = await findDatabaseEndpoints(client);
+
+    res.status(200).send({ endpoints });
+  } catch (e) {
+    console.log(e);
+  }
+}
+
 module.exports = {
   getAbout,
   getProjects,
   getProject,
   postMessage,
   getTechStack,
+  getEndpoints,
 };

@@ -1,0 +1,105 @@
+{
+  "endpoints": {
+    "GET /about": {
+      "description": "serves an object of my personal information",
+      "exampleResponse": {
+        "name": "Jason Chan",
+        "home": "Hello and a warm welcome to my portfolio website!",
+        "linkedin": "https://www.linkedin.com/in/jason-chan-/",
+        "github": "https://github.com/HappyJuice123",
+        "email": "jasonchan1201@gmail.com",
+        "timeline": [
+          {
+            "id": 1,
+            "title": "Northcoders - Junior Full Stack Developer",
+            "location": "Manchester, UK",
+            "description": "I successfully completed Northcoders' 13-Week Software Development Bootcamp Course, where I acquired comprehensive knowledge in both Backend and Frontend development. The course focused on JavaScript, HTML, CSS, and SQL, equipping me with essential skills in these technologies. I developed a strong foundation in JavaScript, mastering key concepts such as higher-order functions, asynchronous functions, and promises. Collaborative work was emphasised, and I gained valuable experience working in pairs. Furthermore, I gained proficiency in unit testing techniques and applied principles of Test-Driven Development, utilising Jest Matchers to ensure the delivery of high-quality code.",
+            "buttonText": "Company Website",
+            "date": "January 2023 - April 2023",
+            "icon": "work"
+          },
+          {
+            "id": 2,
+            "title": "Arcadis - Assistant Civil Engineer",
+            "location": "Warrington, UK",
+            "description": "As a Designer for HS2, I played a pivotal role in delivering crucial bridges, utilising advanced structural analysis tools and Excel to perform calculations. I oversaw the production of drawings and 3D models by delegating tasks to CAD technicians. Additionally, I prepared comprehensive design solutions through detailed reports, showcasing final designs, numerical analysis, and data visualisations. During the Hurontario Light Rail Project, I actively engaged in interdisciplinary design meetings, collaborating with professionals from India, Canada, and the Netherlands to ensure seamless project coordination.",
+            "buttonText": "Company Website",
+            "date": "October 2018 - December 2022",
+            "icon": "work"
+          }
+        ]
+      }
+    },
+    "GET /projects": {
+      "description": "serves an object of my projects",
+      "exampleResponse": [
+        {
+          "id": 1,
+          "name": "Board Game Review Front End",
+          "github": "https://github.com/HappyJuice123/fe-nc-games-project",
+          "host": "https://jasons-board-game-reviews.netlify.app/",
+          "techStack": ["JavaScript", "React", "Axios", "CSS", "Node.js"],
+          "description": "Designed and developed a front end for the board game review API which used CSS for styling and React to render components on pages. The project is hosted using Netlify and displays information derived from the back end project to allow users to navigate between pages, filter and sort reviews, vote, post comments and more.",
+          "img": "1W43LknODiZ6C1SHBUJmsLOEp6ZtP3sSY"
+        },
+        {
+          "id": 2,
+          "name": "Board Game Review API",
+          "github": "https://github.com/HappyJuice123/backend-portfolio-project-NC",
+          "host": "https://jasons-backend-games-project.onrender.com",
+          "techStack": [
+            "JavaScript",
+            "Express",
+            "Jest",
+            "PostgreSQL",
+            "SuperTest",
+            "Node.js"
+          ],
+          "description": "The project involved building a relational database API for board game reviews, which utilised Express and PostgreSQL. The project was hosted using Render, which stored data such as user reviews, comments from users, avatar images and other information.",
+          "img": "1-YiHfnwOCg53_lqV79_0uUiulIy2M6G5"
+        }
+      ]
+    },
+
+    "GET /projects/:id": {
+      "description": "serves an object of a single project",
+      "params": ["id"],
+      "exampleResponse": {
+        "id": 1,
+        "name": "Board Game Review Front End",
+        "github": "https://github.com/HappyJuice123/fe-nc-games-project",
+        "host": "https://jasons-board-game-reviews.netlify.app/",
+        "techStack": ["JavaScript", "React", "Axios", "CSS", "Node.js"],
+        "description": "Designed and developed a front end for the board game review API which used CSS for styling and React to render components on pages. The project is hosted using Netlify and displays information derived from the back end project to allow users to navigate between pages, filter and sort reviews, vote, post comments and more.",
+        "img": "1W43LknODiZ6C1SHBUJmsLOEp6ZtP3sSY"
+      }
+    },
+
+    "GET /techStack": {
+      "description": "serves an object of my tech stack",
+      "exampleResponse": {
+        "JavaScript": 1,
+        "MongoDB": 1,
+        "Firebase": 1,
+        "HTML": 1,
+        "CSS": 1,
+        "PostgreSQL": 1,
+        "Expo": 1,
+        "Jest": 1,
+        "React": 1,
+        "React Native": 1,
+        "Tailwind": 1,
+        "Axios": 1,
+        "Express": 1,
+        "Node.js": 1,
+        "Bootstrap": 1,
+        "NativeWind": 1
+      }
+    },
+
+    "POST /contact": {
+      "description": "Adds a message to the database and sends an automated email to the user",
+      "body": ["email", "name", "message"]
+    }
+  }
+}

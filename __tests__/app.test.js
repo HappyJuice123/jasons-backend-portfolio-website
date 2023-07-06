@@ -75,7 +75,7 @@ describe("App Test", () => {
     });
 
     test("400 - responds with bad request when given an invalid id", async () => {
-      const res = await request(app).get("/projects/5");
+      const res = await request(app).get("/projects/555");
 
       expect(res.status).toBe(400);
       expect(res["_body"].msg).toBe("Bad Request");
@@ -166,6 +166,20 @@ describe("App Test", () => {
 
       expect(res.status).toBe(404);
       expect(res["_body"].msg).toBe("Error 404 - Not Found");
+    });
+  });
+  describe("/api", () => {
+    test("200 - responds with object endpoints", async () => {
+      const res = await request(app).get("/api");
+
+      expect(res.status).toBe(200);
+      expect(res["_body"].endpoints.endpoints).toMatchObject({
+        "GET /projects/:id": expect.any(Object),
+        "GET /about": expect.any(Object),
+        "GET /projects": expect.any(Object),
+        "GET /techStack": expect.any(Object),
+        "POST /contact": expect.any(Object),
+      });
     });
   });
 });
