@@ -10,7 +10,7 @@ const {
   getProject,
   postMessage,
   getTechStack,
-} = require("./model/app.model");
+} = require("./controller/app.controller");
 
 const { handle404 } = require("./controller/error-handling.controller");
 
