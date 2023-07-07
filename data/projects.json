@@ -44,6 +44,7 @@
     "id": 4,
     "name": "Portfolio Website API",
     "github": "https://github.com/HappyJuice123/jasons-backend-portfolio-website",
+    "host": "https://jasons-backend-api.onrender.com/api",
     "techStack": [
       "JavaScript",
       "Node.js",
@@ -53,13 +54,14 @@
       "Jest",
       "Supertest"
     ],
-    "description": "API database built using MongoDB, which was self taught. The project was hosted using XXX, which stored data such as my personal description, project information and tech stack used in projects.",
+    "description": "API database built using MongoDB, which was self taught. The project was hosted using Render, which stored data such as my personal description, project information and tech stack used in projects.",
     "img": "1BWmC9XeEe9t3uQDSeJ3BiOTpf3Ehk85f"
   },
   {
     "id": 5,
     "name": "Portfolio Website Front End",
     "github": "https://github.com/HappyJuice123/personal-portfolio",
+    "host": "https://jasonchanportfolio.netlify.app",
     "techStack": [
       "JavaScript",
       "Node.js",
@@ -68,7 +70,7 @@
       "Bootstrap",
       "CSS"
     ],
-    "description": "Designed and developed the front end using my Portfolio Website API project. Used Bootstrap to style for the first time and found it very useful in keeping styling consistent across pages.",
+    "description": "Designed and developed the front end using my Portfolio Website API project, hosted on Netlify. Used Bootstrap to style for the first time and found it very useful in keeping styling consistent across pages.",
     "img": "1X5cNZXSTqZahLdBQ2AVtd_BaHjaeVezc"
   }
 ]
