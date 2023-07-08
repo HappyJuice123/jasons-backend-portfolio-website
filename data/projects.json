@@ -54,14 +54,14 @@
       "Jest",
       "Supertest"
     ],
-    "description": "API database built using MongoDB, which was self taught. The project was hosted using Render, which stored data such as my personal description, project information and tech stack used in projects.",
+    "description": "API database built using MongoDB, acquiring the necessary skills through self-learning. The project was hosted on Render, where I stored various data, including my personal description, project details, and the tech stack employed in each project.",
     "img": "1BWmC9XeEe9t3uQDSeJ3BiOTpf3Ehk85f"
   },
   {
     "id": 5,
     "name": "Portfolio Website Front End",
     "github": "https://github.com/HappyJuice123/personal-portfolio",
-    "host": "https://jasonchanportfolio.netlify.app",
+    "host": "https://jasonchan-portfolio.netlify.app",
     "techStack": [
       "JavaScript",
       "Node.js",
