@@ -13,7 +13,7 @@
     "id": 2,
     "name": "Board Game Review API",
     "github": "https://github.com/HappyJuice123/backend-portfolio-project-NC",
-    "host": "https://jasons-backend-games-project.onrender.com",
+    "host": "https://jasons-backend-games-project.onrender.com/api",
     "techStack": [
       "JavaScript",
       "Express",
